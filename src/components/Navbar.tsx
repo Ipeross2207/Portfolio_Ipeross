@@ -26,7 +26,7 @@ export default function Navbar() {
           onClick={() => setMenuOpen(false)}
           className="font-mono text-lg font-bold text-cyan-400 transition hover:text-white"
         >
-          MP<span className="text-slate-500">.</span>
+          IP<span className="text-slate-500">.</span>
         </a>
 
         <div className="hidden items-center gap-8 md:flex">
@@ -45,7 +45,7 @@ export default function Navbar() {
             href="/cv.pdf"
             className="rounded border border-cyan-400 px-4 py-2 font-mono text-sm text-cyan-400 transition hover:bg-cyan-400/10"
           >
-            Resume
+            CV
           </a>
         </div>
 
@@ -105,7 +105,7 @@ export default function Navbar() {
                   onClick={() => setMenuOpen(false)}
                   className="mt-4 rounded border border-cyan-400 px-4 py-3 text-center font-mono text-sm text-cyan-400 transition hover:bg-cyan-400/10"
                 >
-                  Resume
+                  CV
                 </a>
               </div>
             </motion.div>

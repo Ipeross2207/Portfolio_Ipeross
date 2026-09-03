@@ -6,15 +6,14 @@ import BackgroundGlow from "@/components/BackgroundGlow";
 import Terminal from "@/components/Terminal";
 import CustomCursor from "@/components/CustomCursor";
 import Projects from "@/components/Projects";
+import About from "@/components/About";
 
 export default function Home() {
   return (
     <>
-      {typeof window !== "undefined" && (
-        <div className="hidden md:block">
-          <CustomCursor />
-        </div>
-      )}
+      <div className="hidden md:block">
+        <CustomCursor />
+      </div>
       <Navbar />
 
       <main className="relative min-h-screen overflow-hidden bg-[#0a0f1c] text-slate-200">
@@ -33,7 +32,7 @@ export default function Home() {
               </p>
 
               <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-7xl">
-                Iván.
+                Ivan.
               </h1>
 
               <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-400 sm:text-4xl md:text-6xl">
@@ -71,6 +70,8 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <About />
 
         <Projects />
       </main>
