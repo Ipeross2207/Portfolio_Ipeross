@@ -52,7 +52,7 @@ export default function Home() {
                 </a>
 
                 <a
-                  href="https://github.com/"
+                  href="https://github.com/Ipeross2207"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="rounded border border-slate-600 px-5 py-3 font-mono text-sm text-slate-300 transition hover:border-slate-400 hover:text-white"
