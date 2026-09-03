@@ -7,6 +7,7 @@ import Terminal from "@/components/Terminal";
 import CustomCursor from "@/components/CustomCursor";
 import Projects from "@/components/Projects";
 import About from "@/components/About";
+import Stack from "@/components/Stack";
 
 export default function Home() {
   return (
@@ -72,6 +73,8 @@ export default function Home() {
         </section>
 
         <About />
+
+        <Stack />
 
         <Projects />
       </main>
