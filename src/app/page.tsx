@@ -41,13 +41,13 @@ export default function Home() {
               </h1>
 
               <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-400 sm:text-4xl md:text-6xl">
-                I build things for the web.
+                I build software that makes sense.
               </h2>
 
               <p className="mt-6 max-w-xl text-lg leading-relaxed text-slate-400">
-                I'm a software developer focused on building modern
-                applications, APIs and digital experiences with clean and
-                maintainable code.
+                I'm a software developer focused on building modern applications 
+                and digital experiences, while putting just as much thought into 
+                how they're built as what they do.
               </p>
 
               <div className="mt-8 flex flex-wrap gap-4">

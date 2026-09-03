@@ -31,6 +31,17 @@ const projects = [
     github: "https://github.com/Castellon-ACM/feast_fit/tree/main",
     image: "/projects/feastfit/feastfit.png",
   },
+  {
+    number: "03",
+    name: "Outbreak 45",
+    status: "PERSONAL",
+    description:
+      "Top-down 2D shooter developed in Unity, focused on real-time combat, enemy AI and strategic resource management. The project features NavMesh-based pathfinding, multiple enemy types, weapon systems and a dedicated audio system.",
+    technologies: ["Unity", "C#"],
+    github: "https://github.com/AzogIvanov/TopDownGame_IPO",
+    itchio: "https://azogivanov.itch.io/outbreak-45",
+    image: "/projects/outbreak/outbreak.png",
+  },
 ];
 
 export default function Projects() {
@@ -108,14 +119,27 @@ export default function Projects() {
                       </a>
                     </>
                   ) : (
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-slate-400 transition-colors hover:text-cyan-400"
-                    >
-                      GitHub ↗
-                    </a>
+                    <>
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-slate-400 transition-colors hover:text-cyan-400"
+                      >
+                        GitHub ↗
+                      </a>
+
+                      {project.itchio && (
+                        <a
+                          href={project.itchio}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-slate-400 transition-colors hover:text-cyan-400"
+                        >
+                          itch.io ↗
+                        </a>
+                      )}
+                    </>
                   )}
                 </div>
               </div>
