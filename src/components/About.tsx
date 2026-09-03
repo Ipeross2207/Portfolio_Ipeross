@@ -33,20 +33,31 @@ export default function About() {
           className="space-y-6 text-lg leading-relaxed text-slate-400"
         >
           <p>
-            I'm a software developer passionate about building modern
-            applications and exploring new technologies.
+            I'm a software developer who enjoys learning by building things.
           </p>
 
           <p>
-            I enjoy working across the stack, from designing APIs and
-            backend systems to creating clean and responsive user
-            interfaces.
+            I'm naturally curious and like understanding how things work 
+            under the hood, whether I'm designing an API, building a 
+            mobile interface or experimenting with a new technology. 
+            I tend to learn by getting my hands dirty, breaking things, 
+            fixing them and trying to make them better.
           </p>
 
           <p>
-            I'm constantly learning, experimenting with new ideas and
-            looking for better ways to build reliable and maintainable
-            software.
+            I'm also someone who cares about how things are built, 
+            not just whether they work. I enjoy keeping projects 
+            organized, exploring good architecture and writing code 
+            that is easier to understand and maintain. Recently, I've 
+            become especially interested in AI, and I'm looking 
+            forward to diving deeper into the field and building 
+            my own projects around it.
+          </p>
+
+          <p>
+            Outside of code, I like discovering new places, 
+            working on personal projects and constantly 
+            finding something new to learn.
           </p>
         </motion.div>
 

@@ -63,13 +63,13 @@ export default function Terminal() {
             <div>
               <p className="text-slate-300">
                 I'm <span className="text-white">Iván</span>, a software
-                developer focused on building modern and maintainable
-                applications.
+                developer who enjoys learning by building things.
               </p>
 
               <p className="mt-2 text-slate-500">
-                I enjoy turning ideas into practical products and exploring new
-                technologies along the way.
+                I'm naturally curious and like understanding how things work
+                under the hood. I learn by experimenting, breaking things,
+                fixing them and making them better.
               </p>
             </div>
 
@@ -81,7 +81,7 @@ export default function Terminal() {
 
               <div className="rounded-lg border border-slate-700/60 bg-slate-800/20 p-3">
                 <p className="text-[11px] text-slate-500">CURRENTLY</p>
-                <p className="mt-1 text-xs text-slate-300">Building things</p>
+                <p className="mt-1 text-xs text-slate-300">Exploring AI</p>
               </div>
 
               <div className="rounded-lg border border-slate-700/60 bg-slate-800/20 p-3">
