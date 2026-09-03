@@ -8,6 +8,7 @@ import CustomCursor from "@/components/CustomCursor";
 import Projects from "@/components/Projects";
 import About from "@/components/About";
 import Stack from "@/components/Stack";
+import Contact from "@/components/Contact";
 
 export default function Home() {
   return (
@@ -77,6 +78,8 @@ export default function Home() {
         <Stack />
 
         <Projects />
+
+        <Contact/>
       </main>
     </>
   );
