@@ -10,7 +10,16 @@ const projects = [
     status: "ACTIVE",
     description:
       "Analytics platform for tracking and visualizing application data.",
-    technologies: ["Java", "Spring Boot", "PostgreSQL", "React Native"],
+    technologies: [
+      "Java",
+      "Spring Boot",
+      "PostgreSQL",
+      "React Native",
+      "Docker",
+    ],
+    github1: "https://github.com/Ipeross2207/Streamlytics_Front_Ipeross",
+    github2: "https://github.com/Ipeross2207/Streamlytics_Back_Ipeross",
+    github: "",
   },
   {
     number: "02",
@@ -19,13 +28,8 @@ const projects = [
     description:
       "Nutrition application for creating and managing personalized meal plans.",
     technologies: ["Flutter", "Firebase"],
-  },
-  {
-    number: "03",
-    name: "Irrigation API",
-    status: "API",
-    description: "REST API for managing automated irrigation systems.",
-    technologies: ["Node.js", "Express"],
+    github: "https://github.com/Castellon-ACM/feast_fit/tree/main",
+    image: "/projects/feastfit/feastfit.png",
   },
 ];
 
@@ -83,29 +87,49 @@ export default function Projects() {
                 </div>
 
                 <div className="mt-8 flex gap-6 font-mono text-sm">
-                  <a
-                    href="#"
-                    className="text-slate-400 transition-colors hover:text-cyan-400"
-                  >
-                    GitHub ↗
-                  </a>
+                  {project.number === "01" ? (
+                    <>
+                      <a
+                        href={project.github1}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-slate-400 transition-colors hover:text-cyan-400"
+                      >
+                        Frontend ↗
+                      </a>
 
-                  <a
-                    href="#"
-                    className="text-slate-400 transition-colors hover:text-cyan-400"
-                  >
-                    Live Demo ↗
-                  </a>
+                      <a
+                        href={project.github2}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-slate-400 transition-colors hover:text-cyan-400"
+                      >
+                        Backend ↗
+                      </a>
+                    </>
+                  ) : (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-slate-400 transition-colors hover:text-cyan-400"
+                    >
+                      GitHub ↗
+                    </a>
+                  )}
                 </div>
               </div>
 
               {project.number === "01" ? (
                 <ProjectPreview />
               ) : (
-                <div className="relative flex min-h-[280px] items-center justify-center rounded-lg border border-slate-800/80 bg-[#0a0f1c]/70">
-                  <span className="font-mono text-xs text-slate-700">
-                    PREVIEW
-                  </span>
+                <div className="relative flex min-h-[280px] items-center justify-center overflow-hidden rounded-lg border border-slate-800/80 bg-[#0a0f1c]/70">
+                  <img
+                    src={project.image}
+                    alt={`${project.name} preview`}
+                    draggable={false}
+                    className="max-h-[350px] w-auto object-contain"
+                  />
                 </div>
               )}
             </div>
