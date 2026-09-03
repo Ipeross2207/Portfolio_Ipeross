@@ -5,6 +5,7 @@ import { motion } from "motion/react";
 
 export default function Terminal() {
   const [input, setInput] = useState("");
+  const [emailCopied, setEmailCopied] = useState(false);
   const [history, setHistory] = useState<
     { id: string; type: "command" | "response"; content: ReactNode }[]
   >([]);
@@ -16,6 +17,20 @@ export default function Terminal() {
       historyRef.current.scrollTop = historyRef.current.scrollHeight;
     }
   }, [history]);
+
+  const copyEmail = async () => {
+    try {
+      await navigator.clipboard.writeText("ipeross2207@gmail.com");
+
+      setEmailCopied(true);
+
+      setTimeout(() => {
+        setEmailCopied(false);
+      }, 2000);
+    } catch {
+      window.prompt("Copy this email:", "ipeross2207@gmail.com");
+    }
+  };
 
   const addToHistory = (type: "command" | "response", content: ReactNode) => {
     setHistory((prev) => [
@@ -195,26 +210,6 @@ export default function Terminal() {
                   </span>
                 </div>
               </div>
-
-              <div className="rounded-lg border border-slate-700/60 bg-slate-800/20 p-3">
-                <div className="flex items-center justify-between">
-                  <p className="text-slate-200">Irrigation API</p>
-                  <span className="text-xs text-slate-500">API</span>
-                </div>
-
-                <p className="mt-1 text-xs leading-relaxed text-slate-500">
-                  REST API for managing automated irrigation systems.
-                </p>
-
-                <div className="mt-2 flex flex-wrap gap-1.5">
-                  <span className="rounded border border-green-400/20 bg-green-400/5 px-2 py-0.5 text-[11px] text-green-300">
-                    Node.js
-                  </span>
-                  <span className="rounded border border-green-400/20 bg-green-400/5 px-2 py-0.5 text-[11px] text-green-300">
-                    Express
-                  </span>
-                </div>
-              </div>
             </div>
           </div>
         );
@@ -264,21 +259,23 @@ export default function Terminal() {
                 </span>
               </a>
 
-              <a
-                href="ipeross2207@gmail.com"
-                className="group flex items-center justify-between rounded-lg border border-slate-700/60 bg-slate-800/20 px-3 py-2 transition hover:border-slate-500 hover:bg-slate-800/40"
+              <button
+                type="button"
+                onClick={copyEmail}
+                className="group flex w-full items-center justify-between rounded-lg border border-slate-700/60 bg-slate-800/20 px-3 py-2 text-left transition hover:border-slate-500 hover:bg-slate-800/40"
               >
                 <div>
                   <p className="text-xs text-slate-500">EMAIL</p>
+
                   <p className="text-sm text-slate-300 transition group-hover:text-white">
-                    ipeross2207@gmail.com
+                    {emailCopied ? "Copied!" : "ipeross2207@gmail.com"}
                   </p>
                 </div>
 
                 <span className="text-slate-600 transition group-hover:text-cyan-400">
-                  ↗
+                  {emailCopied ? "✓" : "↗"}
                 </span>
-              </a>
+              </button>
             </div>
           </div>
         );

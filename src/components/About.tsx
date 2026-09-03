@@ -76,7 +76,7 @@ export default function About() {
             <div>
               <p className="text-slate-600">interests</p>
               <p className="mt-1 text-slate-300">
-                Web · Backend · Mobile
+                Web · Backend · Mobile · AI
               </p>
             </div>
 

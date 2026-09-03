@@ -9,7 +9,7 @@ const projects = [
     name: "Streamlytics",
     status: "ACTIVE",
     description:
-      "Analytics platform for tracking and visualizing application data.",
+      "Full-stack telemetry platform built with Clean Architecture, separating domain logic, application services and infrastructure concerns. The Spring Boot backend handles telemetry processing and persistence with PostgreSQL, while a React Native client provides a responsive interface for monitoring and visualizing application data.",
     technologies: [
       "Java",
       "Spring Boot",

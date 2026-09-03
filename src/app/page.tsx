@@ -9,6 +9,7 @@ import Projects from "@/components/Projects";
 import About from "@/components/About";
 import Stack from "@/components/Stack";
 import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -21,7 +22,9 @@ export default function Home() {
       <main className="relative min-h-screen overflow-hidden bg-[#0a0f1c] text-slate-200">
         <BackgroundGlow />
 
-        <section className="mx-auto flex min-h-screen max-w-7xl items-start px-6 pt-32 md:items-center md:px-12 md:pt-0">
+        <section 
+        id="home"
+        className="mx-auto flex min-h-screen max-w-7xl items-start px-6 pt-32 md:items-center md:px-12 md:pt-0">
           <div className="grid w-full items-center gap-16 lg:grid-cols-[1.1fr_0.9fr]">
             {/* Texto */}
             <motion.div
@@ -80,6 +83,8 @@ export default function Home() {
         <Projects />
 
         <Contact/>
+
+        <Footer />
       </main>
     </>
   );
