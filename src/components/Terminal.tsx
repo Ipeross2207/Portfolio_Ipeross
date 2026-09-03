@@ -229,7 +229,7 @@ export default function Terminal() {
 
             <div className="space-y-2">
               <a
-                href="https://github.com/"
+                href="https://github.com/Ipeross2207"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center justify-between rounded-lg border border-slate-700/60 bg-slate-800/20 px-3 py-2 transition hover:border-slate-500 hover:bg-slate-800/40"
@@ -247,7 +247,7 @@ export default function Terminal() {
               </a>
 
               <a
-                href="https://linkedin.com/"
+                href="https://www.linkedin.com/in/ivan-perez-ossintsev-7a7a41396/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group flex items-center justify-between rounded-lg border border-slate-700/60 bg-slate-800/20 px-3 py-2 transition hover:border-slate-500 hover:bg-slate-800/40"
@@ -265,13 +265,13 @@ export default function Terminal() {
               </a>
 
               <a
-                href="mailto:your@email.com"
+                href="ipeross2207@gmail.com"
                 className="group flex items-center justify-between rounded-lg border border-slate-700/60 bg-slate-800/20 px-3 py-2 transition hover:border-slate-500 hover:bg-slate-800/40"
               >
                 <div>
                   <p className="text-xs text-slate-500">EMAIL</p>
                   <p className="text-sm text-slate-300 transition group-hover:text-white">
-                    your@email.com
+                    ipeross2207@gmail.com
                   </p>
                 </div>
 

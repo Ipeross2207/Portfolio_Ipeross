@@ -1,6 +1,7 @@
 "use client";
 
-import { motion } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
+import { useState } from "react";
 
 const links = [
   { name: "About", href: "#about" },
@@ -10,6 +11,8 @@ const links = [
 ];
 
 export default function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <motion.header
       initial={{ opacity: 0, y: -20 }}
@@ -20,6 +23,7 @@ export default function Navbar() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6 md:px-12">
         <a
           href="#home"
+          onClick={() => setMenuOpen(false)}
           className="font-mono text-lg font-bold text-cyan-400 transition hover:text-white"
         >
           MP<span className="text-slate-500">.</span>
@@ -32,9 +36,7 @@ export default function Navbar() {
               href={link.href}
               className="group font-mono text-sm text-slate-400 transition hover:text-cyan-400"
             >
-              <span className="mr-1 text-cyan-400">
-                0{index + 1}.
-              </span>
+              <span className="mr-1 text-cyan-400">0{index + 1}.</span>
               {link.name}
             </a>
           ))}
@@ -46,7 +48,69 @@ export default function Navbar() {
             Resume
           </a>
         </div>
+
+                {/* Mobile hamburger */}
+        <button
+          type="button"
+          onClick={() => setMenuOpen((open) => !open)}
+          aria-label="Toggle menu"
+          aria-expanded={menuOpen}
+          className="flex flex-col gap-1.5 md:hidden"
+        >
+          <span
+            className={`h-0.5 w-6 bg-cyan-400 transition-transform duration-300 ${
+              menuOpen ? "translate-y-2 rotate-45" : ""
+            }`}
+          />
+
+          <span
+            className={`h-0.5 w-6 bg-cyan-400 transition-opacity duration-300 ${
+              menuOpen ? "opacity-0" : "opacity-100"
+            }`}
+          />
+
+          <span
+            className={`h-0.5 w-6 bg-cyan-400 transition-transform duration-300 ${
+              menuOpen ? "-translate-y-2 -rotate-45" : ""
+            }`}
+          />
+        </button>
       </nav>
+
+        {/* Mobile dropdown */}
+        <AnimatePresence>
+          {menuOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.25 }}
+              className="overflow-hidden border-t border-slate-800/60 bg-[#0a0f1c]/95 backdrop-blur-md md:hidden"
+            >
+              <div className="mx-auto flex max-w-7xl flex-col px-6 py-4">
+                {links.map((link, index) => (
+                  <a
+                    key={link.name}
+                    href={link.href}
+                    onClick={() => setMenuOpen(false)}
+                    className="border-b border-slate-800/60 py-4 font-mono text-sm text-slate-400 transition hover:text-cyan-400"
+                  >
+                    <span className="mr-2 text-cyan-400">0{index + 1}.</span>
+                    {link.name}
+                  </a>
+                ))}
+
+                <a
+                  href="/cv.pdf"
+                  onClick={() => setMenuOpen(false)}
+                  className="mt-4 rounded border border-cyan-400 px-4 py-3 text-center font-mono text-sm text-cyan-400 transition hover:bg-cyan-400/10"
+                >
+                  Resume
+                </a>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
     </motion.header>
   );
 }

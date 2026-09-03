@@ -10,14 +10,17 @@ import Projects from "@/components/Projects";
 export default function Home() {
   return (
     <>
-    <CustomCursor />
+      {typeof window !== "undefined" && (
+        <div className="hidden md:block">
+          <CustomCursor />
+        </div>
+      )}
       <Navbar />
 
       <main className="relative min-h-screen overflow-hidden bg-[#0a0f1c] text-slate-200">
-
         <BackgroundGlow />
 
-        <section className="mx-auto flex min-h-screen max-w-7xl items-center px-6 md:px-12">
+        <section className="mx-auto flex min-h-screen max-w-7xl items-start px-6 pt-32 md:items-center md:px-12 md:pt-0">
           <div className="grid w-full items-center gap-16 lg:grid-cols-[1.1fr_0.9fr]">
             {/* Texto */}
             <motion.div
@@ -29,11 +32,11 @@ export default function Home() {
                 Hi, my name is
               </p>
 
-              <h1 className="text-5xl font-bold tracking-tight text-white md:text-7xl">
+              <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-7xl">
                 Iván.
               </h1>
 
-              <h2 className="mt-3 text-4xl font-bold tracking-tight text-slate-400 md:text-6xl">
+              <h2 className="mt-3 text-3xl font-bold tracking-tight text-slate-400 sm:text-4xl md:text-6xl">
                 I build things for the web.
               </h2>
 
@@ -63,13 +66,13 @@ export default function Home() {
             </motion.div>
 
             {/* Terminal */}
-            <Terminal />
-
+            <div className="hidden lg:block">
+              <Terminal />
+            </div>
           </div>
         </section>
 
         <Projects />
-
       </main>
     </>
   );
